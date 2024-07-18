@@ -1,86 +1,81 @@
-# Vocalverse
+# vocalverse
 
 
 This project provides functionalities for Text Translation, Speech Synthesis, and Audio Transcription service.
 
-## Features
+---
+### Features
 
 Version - 1.0.0
 
 - Translate text between different languages.
 - Convert text to speech and play it.
 - Convert text to speech and export it as an audio file.
+- Transcribes audio file to text.
+- Trims audio file efficiently.
+---
+### Installation
 
-## Installation
+#### pip install : 
 
-### First way : 
-
-   ```bash 
+   ``` 
    pip install vocalverse
    ```
 if you are getting pip not found error try with pip3 (Latest Python Version 3+)
 
-   ```bash 
+   ``` 
    pip3 install vocalverse
    ```
 
-### Second way : 
+#### git clone : 
 
 1. Clone the repository:
 
-    ```bash
+    ```
     git clone https://github.com/Vamshi0104/vocalverse.git
     ```
 
 2. Install the required packages:
 
-    ```bash
+    ```
     pip install -r requirements.txt
     ```
+---
+### Usage
 
-## Usage
+**Explore all the vocalverse capabilities** :
 
-### Following are some example for Vocalverse CLI usage:
+#### Example for vocalverse CLI usage:
 
-- [x] _**Explore all the Vocalverse capabilities**_
-
-    ```bash
     python3 vocalverse.py --help
-    ```
 
-1. 
-
-    ```bash
     python3 vocalverse.py --translate "Hello" "en" "tamil"
-    ```
-
-2. 
-
-    ```bash
+    
     python3 vocalverse.py --tts "How are you??" "en"
-    ```
-
-3. 
-
-    ```bash
+    
     python3 vocalverse.py --tts-file "How are you??" "en" "my_speech" "mp3"
-    ```
 
-4. 
+    python3 langstream.py --audio-to-text your_file_name.mp3   
 
-    ```bash
+    python3 langstream.py --trim-audio source_file_name.mp3 dest_file_name.mp3 20 30  [trims audio file from 20 to 30 seconds) 
+
+    python3 langstream.py --trim-audio source_file_name . 20 30  [in this case dest_file_name would be trimmed_source_file_name as output]
+    
     python3 vocalverse.py --lang-dict
-    ```
+
    
 ### Note :
-Here, 
-#### -- translate for translating text to desired destination language from source language specified
-#### --tts stands for text to speech
-#### --tts-file stands for text to speech and export to a file
 
+    >> --translate for translating text to desired destination language from source language specified
+    >> --tts stands for text to speech
+    >> --tts-file for text to speech and export to a file
+    >> --audio-to-text for transcribing audio to text
+    >> --trim-audio for trimming audio from given start to end time efficiently
 
+---
 
-### These are List of Languages supported for the toolkit
+#### These are List of Languages supported for the toolkit : 
+
 
 | Language Name         | Language Code |
 |-----------------------|---------------|
@@ -191,20 +186,25 @@ Here,
 | zulu                  | zu            |
 
 
-### Following are some example for Vocalverse Python Function usage:
+#### Example for vocalverse Python function usage:
 
-* ### Import vocalverse package 
+* ##### Import vocalverse package 
 > import vocalverse
 
-* ### Calling this function - translates text to desired destination language from source language specified
+* ##### Calling this function - translates text to desired destination language from source language specified
 > translate_text(text, src_lang, dest_lang)
 
-* ### Calling this function - converts text to speech given a destination language specified
+* ##### Calling this function - converts text to speech given a destination language specified
 > text_to_speech(text, lang)
 
-* ### Calling this function - converts text to speech given a destination language and exports audio to a filename and audio extension specified
+* ##### Calling this function - converts text to speech given a destination language and exports audio to a filename and audio extension specified
 > text_to_speech_file_export(text, lang, filename, audio_file_extension)
 
+* ##### Calling this function - transcribes audio file to text specified audio_file_name in input
+> audio_to_text(audio_filename)
+
+* ##### Calling this function - trims audio file from specified start to end time(in seconds) [Note : dest_audio_filename can be '.' - to name it as trimmed_src_audio_filename]
+> trim_audio(src_audio_filename, dest_audio_filename, start_time, end_time)
 ---
 
-### _Stay tuned for more updates!! In progress: adding more functionalities to Vocalverse (in upcoming versions)_ 😊
+##### >>> _Stay tuned for more updates from vocalverse!!!_
